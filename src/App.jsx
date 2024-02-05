@@ -1,7 +1,6 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 
-import './App.css';
 import Calculator from './pages/Calculator';
 
 function App() {
