@@ -1,7 +1,8 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import { ChakraProvider, Text } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 
 import './App.css';
+import Calculator from './pages/Calculator';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
               </>} />
           <Route
             path="/"
-            element={<Text color="blue">DuelCalc Pro</Text>} />
+            element={<Calculator />} />
         </Routes>
       </HashRouter>
     </ChakraProvider>
