@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Input, Button, Flex, Text } from '@chakra-ui/react';
 
 const Calculator = () => {
-  const [input, setInput] = useState('');
-  const [result, setResult] = useState('');
+  const [input, setInput] = useState('8000');
+  const [result, setResult] = useState('8000');
 
   const handleButtonClick = (value) => {
     if (value === '=') {
