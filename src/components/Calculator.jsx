@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Input, Button, Flex, Text } from '@chakra-ui/react';
 
-const Calculator = () => {
+const Calculator = ({ name }) => {
   const [input, setInput] = useState('8000');
   const [result, setResult] = useState('8000');
 
@@ -23,7 +23,7 @@ const Calculator = () => {
   return (
     <Flex direction="column" align="center" mt={10} bg="blue.100" p="3">
       <Text fontSize="2xl" mb={4}>
-        DuelCalc Pro
+        {name}
       </Text>
       <Input type="text" value={input} readOnly mb={4} bg="white" />
       <Flex>
