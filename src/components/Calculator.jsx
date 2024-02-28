@@ -55,6 +55,9 @@ const Calculator = ({ name }) => {
         ))}
       </Flex>
       <Flex>
+        <Button onClick={() => handleButtonClick("00")} mr={2}>
+          00
+        </Button>
         <Button onClick={() => handleButtonClick('C')}>C</Button>
       </Flex>
       <Text mt={4}>Result: {result}</Text>
