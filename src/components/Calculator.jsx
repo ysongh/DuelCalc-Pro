@@ -20,6 +20,11 @@ const Calculator = ({ name }) => {
     }
   };
 
+  const reset = () => {
+    setInput('8000');
+    setResult('8000');
+  }
+
   return (
     <Flex direction="column" align="center" mt={10} bg="blue.100" p="3">
       <Text fontSize="2xl" mb={4}>
@@ -59,6 +64,9 @@ const Calculator = ({ name }) => {
           00
         </Button>
         <Button onClick={() => handleButtonClick('C')}>C</Button>
+      </Flex>
+      <Flex>
+        <Button onClick={() => reset()}>R</Button>
       </Flex>
       <Text mt={4}>Result: {result}</Text>
     </Flex>
