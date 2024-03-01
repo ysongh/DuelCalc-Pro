@@ -15,6 +15,8 @@ const Calculator = ({ name }) => {
     } else if (value === 'C') {
       setInput('');
       setResult('');
+    } else if (value === '<') {
+      setInput((prevInput) => prevInput.slice(0, -1));
     } else {
       setInput((prevInput) => prevInput + value);
     }
@@ -62,6 +64,9 @@ const Calculator = ({ name }) => {
       <Flex>
         <Button onClick={() => handleButtonClick("00")} mr={2}>
           00
+        </Button>
+        <Button onClick={() => handleButtonClick("<")} mr={2}>
+          {"<"}
         </Button>
         <Button onClick={() => handleButtonClick('C')}>C</Button>
       </Flex>
