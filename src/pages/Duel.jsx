@@ -1,5 +1,6 @@
-import { Container, Flex, Text } from "@chakra-ui/react";
+import { Container, Flex, Box, Text } from "@chakra-ui/react";
 import Calculator from "../components/Calculator";
+import Calculator2 from "../components/Calculator2";
 
 function Duel() {
   return (
@@ -10,6 +11,8 @@ function Duel() {
       <Flex gap="2">
         <Calculator name="Player 1"/>
         <Calculator name="Player 2" />
+        <Box mx="5"></Box>
+        <Calculator2 />
       </Flex>
     </Container>
   )
