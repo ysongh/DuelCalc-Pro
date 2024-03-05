@@ -4,6 +4,7 @@ import { Input, Tooltip, Button, Flex, Text } from '@chakra-ui/react';
 const Calculator2 = () => {
   const [input, setInput] = useState('');
   const [result, setResult] = useState('');
+  const [isCopy, setIsCopy] = useState(false);
 
   const handleButtonClick = (value) => {
     if (value === '=') {
@@ -20,10 +21,12 @@ const Calculator2 = () => {
     } else {
       setInput((prevInput) => prevInput + value);
     }
+    setIsCopy(false);
   };
 
   const copyLink = () => {
     navigator.clipboard.writeText(result);
+    setIsCopy(true);
   }
 
   return (
@@ -69,9 +72,12 @@ const Calculator2 = () => {
         </Button>
         <Button onClick={() => handleButtonClick('C')}>C</Button>
       </Flex>
-      <Text mt={4} onClick={copyLink}>
-        Result: {result}
-      </Text>
+      
+      <Tooltip label={isCopy ? "Copied" : "Copy"} closeOnClick={false}>
+        <Text mt={4} onClick={copyLink}>
+          Result: {result}
+        </Text>
+      </Tooltip>
     </Flex>
   );
 };
