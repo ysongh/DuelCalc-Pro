@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input, Button, Flex, Text } from '@chakra-ui/react';
+import { Input, Tooltip, Button, Flex, Text } from '@chakra-ui/react';
 
 const Calculator2 = () => {
   const [input, setInput] = useState('');
@@ -21,6 +21,10 @@ const Calculator2 = () => {
       setInput((prevInput) => prevInput + value);
     }
   };
+
+  const copyLink = () => {
+    navigator.clipboard.writeText(result);
+  }
 
   return (
     <Flex direction="column" align="center" mt={10} bg="yellow.100" p="3">
@@ -65,7 +69,9 @@ const Calculator2 = () => {
         </Button>
         <Button onClick={() => handleButtonClick('C')}>C</Button>
       </Flex>
-      <Text mt={4}>Result: {result}</Text>
+      <Text mt={4} onClick={copyLink}>
+        Result: {result}
+      </Text>
     </Flex>
   );
 };
