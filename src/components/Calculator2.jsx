@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Input, Tooltip, Button, Flex, Text } from '@chakra-ui/react';
 
-const Calculator2 = () => {
+const Calculator2 = ({ setInput1, setInput2}) => {
   const [input, setInput] = useState('');
   const [result, setResult] = useState('');
   const [isCopy, setIsCopy] = useState(false);
@@ -27,6 +27,14 @@ const Calculator2 = () => {
   const copyLink = () => {
     navigator.clipboard.writeText(result);
     setIsCopy(true);
+  }
+
+  const addToPlayer1 = () => {
+    setInput1((prevInput) => prevInput + result);
+  }
+
+  const addToPlayer2 = () => {
+    setInput2((prevInput) => prevInput + result);
   }
 
   return (
@@ -78,6 +86,14 @@ const Calculator2 = () => {
           Result: {result}
         </Text>
       </Tooltip>
+      <Flex>
+        <Button onClick={addToPlayer1}>
+          Apply to Player 1
+        </Button>
+        <Button onClick={addToPlayer2}>
+          Apply to Player 2
+        </Button>
+      </Flex>
     </Flex>
   );
 };

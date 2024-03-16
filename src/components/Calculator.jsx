@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Input, Button, Flex, Text } from '@chakra-ui/react';
 
-const Calculator = ({ name }) => {
-  const [input, setInput] = useState('8000');
+const Calculator = ({ name, input, setInput }) => {
   const [result, setResult] = useState('8000');
 
   const handleButtonClick = (value) => {
