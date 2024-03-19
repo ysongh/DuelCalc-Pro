@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Input, Button, Flex, Text } from '@chakra-ui/react';
+import { Input, Tooltip, Button, Flex, Text } from '@chakra-ui/react';
 
-const Calculator = ({ name, input, setInput }) => {
-  const [result, setResult] = useState('8000');
+const DamageCalculator = ({ setInput1, setInput2}) => {
+  const [input, setInput] = useState('');
+  const [result, setResult] = useState('');
+  const [isCopy, setIsCopy] = useState(false);
 
   const handleButtonClick = (value) => {
     if (value === '=') {
@@ -19,17 +21,26 @@ const Calculator = ({ name, input, setInput }) => {
     } else {
       setInput((prevInput) => prevInput + value);
     }
+    setIsCopy(false);
   };
 
-  const reset = () => {
-    setInput('8000');
-    setResult('8000');
+  const copyLink = () => {
+    navigator.clipboard.writeText(result);
+    setIsCopy(true);
+  }
+
+  const addToPlayer1 = () => {
+    setInput1((prevInput) => prevInput + result);
+  }
+
+  const addToPlayer2 = () => {
+    setInput2((prevInput) => prevInput + result);
   }
 
   return (
-    <Flex direction="column" align="center" mt={10} bg="blue.100" p="3">
+    <Flex direction="column" align="center" mt={10} bg="yellow.100" p="3">
       <Text fontSize="2xl" mb={4}>
-        {name}
+        Other
       </Text>
       <Input type="text" value={input} readOnly mb={4} bg="white" />
       <Flex>
@@ -69,12 +80,22 @@ const Calculator = ({ name, input, setInput }) => {
         </Button>
         <Button onClick={() => handleButtonClick('C')}>C</Button>
       </Flex>
+      
+      <Tooltip label={isCopy ? "Copied" : "Copy"} closeOnClick={false}>
+        <Text mt={4} onClick={copyLink}>
+          Result: {result}
+        </Text>
+      </Tooltip>
       <Flex>
-        <Button onClick={() => reset()}>R</Button>
+        <Button onClick={addToPlayer1}>
+          Apply to Player 1
+        </Button>
+        <Button onClick={addToPlayer2}>
+          Apply to Player 2
+        </Button>
       </Flex>
-      <Text mt={4}>Result: {result}</Text>
     </Flex>
   );
 };
 
-export default Calculator;
+export default DamageCalculator;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, SimpleGrid, Text } from "@chakra-ui/react";
-import Calculator from "../components/Calculator";
-import Calculator2 from "../components/Calculator2";
+import PlayerCalculator from "../components/PlayerCalculator";
+import DamageCalculator from "../components/DamageCalculator";
 
 function Duel() {
   const [player1Input, setPlayer1Input] = useState('8000');
@@ -13,17 +13,17 @@ function Duel() {
         DuelCalc Pro
       </Text>
       <SimpleGrid minChildWidth='250px' columns={3} spacing={4}>
-        <Calculator
+        <PlayerCalculator
           name="Player 1"
           input={player1Input}
           setInput={setPlayer1Input}
         />
-        <Calculator
+        <PlayerCalculator
           name="Player 2"
           input={player2Input}
           setInput={setPlayer2Input}
         />
-        <Calculator2
+        <DamageCalculator
           setInput1={setPlayer1Input}
           setInput2={setPlayer2Input}/>
       </SimpleGrid>
