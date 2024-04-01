@@ -14,7 +14,7 @@ function Duel() {
 
   return (
     <Container maxW='1000px'>
-       <Text fontSize="2xl" mb={4} textAlign="center">
+       <Text fontSize="4xl" mt={3} textAlign="center">
         DuelCalc Pro
       </Text>
       <SimpleGrid minChildWidth='250px' columns={3} spacing={4}>
