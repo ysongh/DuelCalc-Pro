@@ -64,6 +64,9 @@ const PlayerCalculator = ({ name, input, setInput }) => {
         <Button onClick={() => handleButtonClick("00")} mr={2}>
           00
         </Button>
+        <Button onClick={() => handleButtonClick("000")} mr={2}>
+          000
+        </Button>
         <Button onClick={() => handleButtonClick("<")} mr={2}>
           {"<"}
         </Button>
