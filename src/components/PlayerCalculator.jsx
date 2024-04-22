@@ -16,6 +16,8 @@ const PlayerCalculator = ({ name, input, setInput }) => {
       setResult('');
     } else if (value === '<') {
       setInput((prevInput) => prevInput.slice(0, -1));
+    } else if (value === '<<') {
+        setInput((prevInput) => prevInput.slice(0, -2));
     } else {
       setInput((prevInput) => prevInput + value);
     }
@@ -67,12 +69,16 @@ const PlayerCalculator = ({ name, input, setInput }) => {
         <Button onClick={() => handleButtonClick("000")} mr={2}>
           000
         </Button>
-        <Button onClick={() => handleButtonClick("<")} mr={2}>
-          {"<"}
-        </Button>
+        
         <Button onClick={() => handleButtonClick('C')}>C</Button>
       </Flex>
       <Flex>
+        <Button onClick={() => handleButtonClick("<")} mr={2}>
+          {"<"}
+        </Button>
+        <Button onClick={() => handleButtonClick("<<")} mr={2}>
+          {"<<"}
+        </Button>
         <Button onClick={() => reset()}>R</Button>
       </Flex>
       <Text mt={4}>Result: {result}</Text>
