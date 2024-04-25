@@ -31,9 +31,15 @@ const PlayerCalculator = ({ name, input, setInput }) => {
 
   return (
     <Flex direction="column" align="center" mt={10} bg="blue.100" p="3">
-      <Text fontSize="2xl" mb={4}>
-        {name}
-      </Text>
+      <Flex mb="2">
+        <Text fontSize="2xl" mr="100px">
+          {name}
+        </Text>
+        <Text fontSize="2xl">
+          <CountUp end={result} duration={1} />
+        </Text>
+      </Flex>
+      
       <Input type="text" value={input} readOnly mb={4} bg="white" />
       <Flex>
         {[7, 8, 9, '/'].map((value) => (
@@ -82,7 +88,7 @@ const PlayerCalculator = ({ name, input, setInput }) => {
         </Button>
         <Button onClick={() => reset()}>R</Button>
       </Flex>
-      <Text mt={4}>Result: <CountUp end={result} duration={1} /></Text>
+      
     </Flex>
   );
 };
