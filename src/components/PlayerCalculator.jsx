@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Input, Button, Flex, Text } from '@chakra-ui/react';
+import CountUp from 'react-countup';
 
 const PlayerCalculator = ({ name, input, setInput }) => {
   const [result, setResult] = useState('8000');
@@ -81,7 +82,7 @@ const PlayerCalculator = ({ name, input, setInput }) => {
         </Button>
         <Button onClick={() => reset()}>R</Button>
       </Flex>
-      <Text mt={4}>Result: {result}</Text>
+      <Text mt={4}>Result: <CountUp end={result} duration={1} /></Text>
     </Flex>
   );
 };
