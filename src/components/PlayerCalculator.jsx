@@ -35,7 +35,7 @@ const PlayerCalculator = ({ name, input, setInput }) => {
         <Text fontSize="2xl" mr="100px">
           {name}
         </Text>
-        <Text fontSize="2xl">
+        <Text fontSize="2xl" fontWeight="1000">
           <CountUp end={result} duration={1} />
         </Text>
       </Flex>
