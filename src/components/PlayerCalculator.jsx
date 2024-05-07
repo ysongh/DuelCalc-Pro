@@ -49,28 +49,28 @@ const PlayerCalculator = ({ name, input, setInput }) => {
         ))}
       </Flex>
       <Flex>
-        {[4, 5, 6, '*'].map((value) => (
+        {[4, 5, 6, '-'].map((value) => (
           <Button key={value} onClick={() => handleButtonClick(value)} mr={2}>
             {value}
           </Button>
         ))}
       </Flex>
       <Flex>
-        {[1, 2, 3, '-'].map((value) => (
+        {[1, 2, 3, '+'].map((value) => (
           <Button key={value} onClick={() => handleButtonClick(value)} mr={2}>
             {value}
           </Button>
         ))}
       </Flex>
       <Flex>
-        {[0, '.', '=', '+'].map((value) => (
+        {[0, '.', '=', 'C'].map((value) => (
           <Button key={value} onClick={() => handleButtonClick(value)} mr={2}>
             {value}
           </Button>
         ))}
       </Flex>
       <Flex>
-        {["00", "000", 'C'].map((value) => (
+        {["00", "000",].map((value) => (
           <Button key={value} onClick={() => handleButtonClick(value)} mr={2}>
             {value}
           </Button>
