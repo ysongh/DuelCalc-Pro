@@ -63,28 +63,20 @@ const PlayerCalculator = ({ name, input, setInput }) => {
         ))}
       </Flex>
       <Flex>
-        {[0, '.', '=', 'C'].map((value) => (
+        {[0, '00', '=', 'C'].map((value) => (
           <Button key={value} onClick={() => handleButtonClick(value)} mr={2}>
             {value}
           </Button>
         ))}
       </Flex>
       <Flex>
-        {["00", "000",].map((value) => (
-          <Button key={value} onClick={() => handleButtonClick(value)} mr={2}>
-            {value}
-          </Button>
-        ))}
-      </Flex>
-      <Flex>
-        {["<", "<<"].map((value) => (
+        {["000", "<", "<<"].map((value) => (
           <Button key={value} onClick={() => handleButtonClick(value)} mr={2}>
             {value}
           </Button>
         ))}
         <Button onClick={() => reset()}>R</Button>
-      </Flex>
-      
+      </Flex>      
     </Flex>
   );
 };
