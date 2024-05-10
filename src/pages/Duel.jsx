@@ -17,6 +17,9 @@ function Duel() {
        <Text fontSize="4xl" mt={3} textAlign="center">
         DuelCalc Pro
       </Text>
+      <Button onClick={() => reset()} mt="3">
+        Reset Points
+      </Button>
       <SimpleGrid minChildWidth='250px' columns={3} spacing={4}>
         <PlayerCalculator
           name="Player 1"
@@ -32,10 +35,6 @@ function Duel() {
           setInput1={setPlayer1Input}
           setInput2={setPlayer2Input}/>
       </SimpleGrid>
-
-      <Button onClick={() => reset()} mt="3">
-        Reset Points
-      </Button>
     </Container>
   )
 }
