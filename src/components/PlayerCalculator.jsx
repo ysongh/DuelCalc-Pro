@@ -53,7 +53,7 @@ const PlayerCalculator = ({ name, input, setInput }) => {
           value={input} 
           readOnly 
           mb={4} 
-          bg="rgba(255, 255, 255, 0.8)" 
+          bg="rgba(255, 255, 200, 0.8)" 
           borderRadius="md" 
           boxShadow="inner"
         />
