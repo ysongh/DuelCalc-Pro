@@ -32,12 +32,14 @@ const PlayerCalculator = ({ name, input, setInput }) => {
   return (
     <Flex direction="column" align="center" mt={10}>
       <Box 
-        bg="rgba(255, 255, 255, 0.2)"
-        borderRadius="10px"
-        p={6}
-        boxShadow="0 4px 30px rgba(0, 0, 0, 0.1)"
+        bg="rgba(255, 255, 255, 0.1)"
+        borderRadius="20px"
+        p={3}
+        boxShadow="0 8px 32px rgba(0, 0, 0, 0.37)"
         backdropFilter="blur(10px)"
-        border="1px solid rgba(255, 255, 255, 0.3)"
+        border="1px solid rgba(255, 255, 255, 0.18)"
+        w="90%"
+        maxW="400px"
       >
         <Flex mb="2" justify="space-between" w="100%">
           <Text fontSize="2xl" mr="100px">
