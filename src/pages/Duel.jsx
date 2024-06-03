@@ -14,13 +14,13 @@ function Duel() {
 
   return (
     <Container maxW='1000px'>
-       <Text fontSize="4xl" mt={3} textAlign="center">
+      <Text fontSize="4xl" mt={3} textAlign="center">
         DuelCalc Pro
       </Text>
       <Button onClick={() => reset()} mt="3">
         Reset Points
       </Button>
-      <SimpleGrid minChildWidth='250px' columns={3} spacing={4}>
+      <SimpleGrid minChildWidth='250px' columns={3} spacing={2}>
         <PlayerCalculator
           name="Player 1"
           input={player1Input}
