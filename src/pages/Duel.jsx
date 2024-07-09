@@ -14,7 +14,7 @@ function Duel() {
 
   return (
     <Container maxW='1000px'>
-      <Text fontSize="4xl" mt={3} textAlign="center">
+      <Text fontSize="4xl" mt={3} textAlign="center" fontWeight="bold">
         DuelCalc Pro
       </Text>
       <Button onClick={() => reset()} colorScheme="blue" size="lg" mt="3">
