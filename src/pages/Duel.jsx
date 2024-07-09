@@ -17,7 +17,7 @@ function Duel() {
       <Text fontSize="4xl" mt={3} textAlign="center">
         DuelCalc Pro
       </Text>
-      <Button onClick={() => reset()} mt="3">
+      <Button onClick={() => reset()} colorScheme="blue" size="lg" mt="3">
         Reset Points
       </Button>
       <SimpleGrid minChildWidth='250px' columns={3} spacing={2}>
