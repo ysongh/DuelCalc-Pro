@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Container, SimpleGrid, Button, Text } from "@chakra-ui/react";
 import PlayerCalculator from "../components/PlayerCalculator";
 import DamageCalculator from "../components/DamageCalculator";
+import EventLog from '../components/EventLog';
 
 function Duel() {
   const [player1Input, setPlayer1Input] = useState('8000');
   const [player2Input, setPlayer2Input] = useState('8000');
+  const [eventLog, setEventLog] = useState(["Points have been reset"]);
 
   const reset = () => {
     setPlayer1Input('8000');
@@ -37,6 +39,7 @@ function Duel() {
           setInput1={setPlayer1Input}
           setInput2={setPlayer2Input}/>
       </SimpleGrid>
+      <EventLog events={eventLog} />
     </Container>
   )
 }
