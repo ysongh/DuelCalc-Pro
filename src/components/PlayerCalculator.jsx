@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Input, Button, Flex, Text, Box } from '@chakra-ui/react';
 import CountUp from 'react-countup';
 
-const PlayerCalculator = ({ name, input, setInput }) => {
+const PlayerCalculator = ({ name, input, setInput, addToLog }) => {
   const [result, setResult] = useState('8000');
 
   const handleButtonClick = (value) => {
     if (value === '=') {
       try {
         setResult(eval(input).toString());
+        addToLog(`${name} => ${result}`);
       } catch (error) {
         setResult('Error');
       }

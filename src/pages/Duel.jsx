@@ -7,11 +7,15 @@ import EventLog from '../components/EventLog';
 function Duel() {
   const [player1Input, setPlayer1Input] = useState('8000');
   const [player2Input, setPlayer2Input] = useState('8000');
-  const [eventLog, setEventLog] = useState(["Points have been reset"]);
-
+  const [eventLog, setEventLog] = useState([]);
+  
   const reset = () => {
     setPlayer1Input('8000');
     setPlayer2Input('8000');
+  }
+
+  const addToLog = (message) => {
+    setEventLog([...eventLog, message]);
   }
 
   return (
@@ -29,11 +33,13 @@ function Duel() {
           name="Player 1"
           input={player1Input}
           setInput={setPlayer1Input}
+          addToLog={addToLog}
         />
         <PlayerCalculator
           name="Player 2"
           input={player2Input}
           setInput={setPlayer2Input}
+          addToLog={addToLog}
         />
         <DamageCalculator
           setInput1={setPlayer1Input}
