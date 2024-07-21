@@ -8,8 +8,9 @@ const PlayerCalculator = ({ name, input, setInput, addToLog }) => {
   const handleButtonClick = (value) => {
     if (value === '=') {
       try {
-        setResult(eval(input).toString());
-        addToLog(`${name} => ${result}`);
+        const newResult = eval(input).toString();
+        setResult(newResult);
+        addToLog(`${name} => ${newResult}`);
       } catch (error) {
         setResult('Error');
       }
