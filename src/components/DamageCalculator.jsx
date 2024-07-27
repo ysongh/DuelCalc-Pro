@@ -104,10 +104,10 @@ const DamageCalculator = ({ setInput1, setInput2}) => {
           </Text>
         </Tooltip>
         <Flex>
-          <Button onClick={addToPlayer1} fontSize="12px">
+          <Button onClick={addToPlayer1} fontSize="12px" bg="#3d6cb9" textColor="white">
             Apply to Player 1
           </Button>
-          <Button onClick={addToPlayer2} fontSize="12px">
+          <Button onClick={addToPlayer2} fontSize="12px" bg="#49beb7" textColor="white">
             Apply to Player 2
           </Button>
         </Flex>
