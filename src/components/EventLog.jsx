@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, List, ListItem } from "@chakra-ui/react";
+import { Box, Text, List, ListItem, Divider } from "@chakra-ui/react";
 
 const EventLog = ({ events }) => {
   return (
@@ -14,7 +14,8 @@ const EventLog = ({ events }) => {
       backdropFilter="blur(10px)"
       border="1px solid rgba(255, 255, 255, 0.18)"
     >
-      <Text fontSize="2xl" mb={4}>Event Log</Text>
+      <Text fontSize="2xl">Event Log</Text>
+      <Divider bg="green" mb="2" />
       <List spacing={3}>
         {events.map((event, index) => (
           <ListItem key={index}>{event}</ListItem>
