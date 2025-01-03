@@ -15,7 +15,7 @@ function Duel() {
   }
 
   const addToLog = (message) => {
-    setEventLog([...eventLog, message]);
+    setEventLog([message, ...eventLog]);
   }
 
   return (
