@@ -9,8 +9,9 @@ const PlayerCalculator = ({ name, input, setInput, addToLog }) => {
     if (value === '=') {
       try {
         const newResult = eval(input).toString();
+        const today = new Date();
         setResult(newResult);
-        addToLog(`${name} => ${newResult}`);
+        addToLog(`${name} => ${newResult} at ${today}`);
       } catch (error) {
         setResult('Error');
       }
