@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box, Text, List, ListItem, Divider } from "@chakra-ui/react";
+import { Box, Text, List, ListItem, Flex, Button, Spacer, Divider } from "@chakra-ui/react";
 
-const EventLog = ({ events }) => {
+const EventLog = ({ events, resetEventLog }) => {
   return (
     <Box
       w="100%"
@@ -14,7 +14,14 @@ const EventLog = ({ events }) => {
       backdropFilter="blur(10px)"
       border="1px solid rgba(255, 255, 255, 0.18)"
     >
-      <Text fontSize="2xl">Event Log</Text>
+      <Flex alignItems='center' mb="1">
+        <Text fontSize="2xl">Event Log</Text>
+        <Spacer />
+        <Button onClick={() => resetEventLog()} colorScheme="red">
+          Reset
+        </Button>
+      </Flex>
+      
       <Divider bg="green" mb="2" />
       <List spacing={3}>
         {events.map((event, index) => (

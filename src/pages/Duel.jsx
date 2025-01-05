@@ -18,6 +18,10 @@ function Duel() {
     setEventLog([message, ...eventLog]);
   }
 
+  const resetEventLog = () => {
+    setEventLog([]);
+  }
+
   return (
     <Container maxW='1000px'>
       <Text fontSize="4xl" mt={3} textAlign="center" fontWeight="bold">
@@ -45,7 +49,7 @@ function Duel() {
           setInput1={setPlayer1Input}
           setInput2={setPlayer2Input}/>
       </SimpleGrid>
-      <EventLog events={eventLog} />
+      <EventLog events={eventLog} resetEventLog={resetEventLog} />
     </Container>
   )
 }
