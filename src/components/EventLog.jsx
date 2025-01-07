@@ -6,6 +6,7 @@ const EventLog = ({ events, resetEventLog }) => {
     <Box
       w="100%"
       mt={6}
+      mb={10}
       p={4}
       borderWidth="1px"
       borderRadius="lg"
